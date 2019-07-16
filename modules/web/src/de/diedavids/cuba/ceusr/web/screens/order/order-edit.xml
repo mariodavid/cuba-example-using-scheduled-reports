@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editorCaption"
+        focusComponent="form"
+        messagesPack="de.diedavids.cuba.ceusr.web.screens.order">
+    <data>
+        <instance id="orderDc"
+                  class="de.diedavids.cuba.ceusr.entity.Order"
+                  view="order-view">
+            <loader/>
+            <collection id="lineItemsDc" property="lineItems"/>
+        </instance>
+        <collection id="customersDc" class="de.diedavids.cuba.ceusr.entity.Customer" view="_minimal">
+            <loader id="customersLc">
+                <query>
+                    <![CDATA[select e from ceusr_Customer e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="orderDc">
+            <column width="250px">
+                <dateField id="orderDateField" property="orderDate"/>
+                <lookupPickerField id="customerField" optionsContainer="customersDc" property="customer"/>
+                <textField id="totalAmountField" property="totalAmount"/>
+            </column>
+        </form>
+        <groupBox id="lineItemsBox" caption="msg://de.diedavids.cuba.ceusr.entity/Order.lineItems">
+            <table id="lineItemsTable" dataContainer="lineItemsDc" width="100%" height="200px">
+                <actions>
+                    <action id="create" type="create"/>
+                    <action id="edit" type="edit"/>
+                    <action id="remove" type="remove"/>
+                </actions>
+                <columns>
+                    <column id="product"/>
+                    <column id="amount"/>
+                    <column id="totalPrice"/>
+                </columns>
+                <buttonsPanel>
+                    <button action="lineItemsTable.create"/>
+                    <button action="lineItemsTable.edit"/>
+                    <button action="lineItemsTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <hbox id="editActions" spacing="true">
+            <button action="windowCommitAndClose"/>
+            <button action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editorCaption"
+        focusComponent="form"
+        messagesPack="de.diedavids.cuba.ceusr.web.screens.lineitem">
+    <data>
+        <instance id="lineItemDc"
+                  class="de.diedavids.cuba.ceusr.entity.LineItem"
+                  view="lineItem-view">
+            <loader/>
+        </instance>
+        <collection id="productsDc" class="de.diedavids.cuba.ceusr.entity.Product" view="_minimal">
+            <loader id="productsLc">
+                <query>
+                    <![CDATA[select e from ceusr_Product e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="lineItemDc">
+            <column width="250px">
+                <lookupPickerField id="productField" optionsContainer="productsDc" property="product">
+                    <actions>
+                        <action id="lookup" type="picker_lookup"/>
+                    </actions>
+                </lookupPickerField>
+                <textField id="amountField" property="amount"/>
+                <textField id="totalPriceField" property="totalPrice"/>
+                <pickerField id="orderField" property="order">
+                    <actions>
+                        <action id="lookup" type="picker_lookup"/>
+                        <action id="clear" type="picker_clear"/>
+                    </actions>
+                </pickerField>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button action="windowCommitAndClose"/>
+            <button action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

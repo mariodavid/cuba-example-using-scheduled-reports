@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<auto-import>
+
+  <!-- Sales Report (scheduled monthly) -->
+  <auto-import-file
+          path="de/diedavids/cuba/ceusr/autoimport/reports/sales_report.zip"
+          bean="ceusr_ReportsAutoImportProcessor"
+  />
+
+  <!-- Big customers report -->
+  <auto-import-file
+          path="de/diedavids/cuba/ceusr/autoimport/reports/big_customers.zip"
+          bean="ceusr_ReportsAutoImportProcessor"
+  />
+
+
+
+
+</auto-import>

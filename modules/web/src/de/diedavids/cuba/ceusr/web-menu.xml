@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
-    <menu id="application-ceusr" insertBefore="administration">
+    <menu id="application-ceusr" insertBefore="reports">
         <item screen="ceusr_Customer.browse"/>
+        <item screen="ceusr_Order.browse"/>
+        <item screen="ceusr_Product.browse"/>
     </menu>
 </menu-config>

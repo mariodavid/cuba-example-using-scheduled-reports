@@ -1,1 +1,10 @@
-
+-- begin CEUSR_ORDER
+alter table CEUSR_ORDER add constraint FK_CEUSR_ORDER_ON_CUSTOMER foreign key (CUSTOMER_ID) references CEUSR_CUSTOMER(ID)^
+create index IDX_CEUSR_ORDER_ON_CUSTOMER on CEUSR_ORDER (CUSTOMER_ID)^
+-- end CEUSR_ORDER
+-- begin CEUSR_LINE_ITEM
+alter table CEUSR_LINE_ITEM add constraint FK_CEUSR_LINE_ITEM_ON_PRODUCT foreign key (PRODUCT_ID) references CEUSR_PRODUCT(ID)^
+alter table CEUSR_LINE_ITEM add constraint FK_CEUSR_LINE_ITEM_ON_ORDER foreign key (ORDER_ID) references CEUSR_ORDER(ID)^
+create index IDX_CEUSR_LINE_ITEM_ON_PRODUCT on CEUSR_LINE_ITEM (PRODUCT_ID)^
+create index IDX_CEUSR_LINE_ITEM_ON_ORDER on CEUSR_LINE_ITEM (ORDER_ID)^
+-- end CEUSR_LINE_ITEM

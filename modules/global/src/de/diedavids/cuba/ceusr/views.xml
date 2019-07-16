@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
 
+    <view entity="ceusr_LineItem" name="lineItem-view" extends="_local">
+        <property name="product" view="_minimal"/>
+        <property name="order" view="_minimal"/>
+    </view>
+    <view entity="ceusr_Order" name="order-view" extends="_local">
+        <property name="customer" view="_minimal"/>
+        <property name="lineItems" view="lineItem-view"/>
+    </view>
 </views>

@@ -3,5 +3,8 @@
     <persistence-unit name="cuba-example-using-scheduled-reports" transaction-type="RESOURCE_LOCAL">
 
         <class>de.diedavids.cuba.ceusr.entity.Customer</class>
+        <class>de.diedavids.cuba.ceusr.entity.Order</class>
+        <class>de.diedavids.cuba.ceusr.entity.Product</class>
+        <class>de.diedavids.cuba.ceusr.entity.LineItem</class>
     </persistence-unit>
 </persistence>
