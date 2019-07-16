@@ -4,5 +4,6 @@
         <item screen="ceusr_Customer.browse"/>
         <item screen="ceusr_Order.browse"/>
         <item screen="ceusr_Product.browse"/>
+        <item screen="ceusr_BigCustomersList.browse"/>
     </menu>
 </menu-config>

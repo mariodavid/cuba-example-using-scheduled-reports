@@ -6,5 +6,6 @@
         <class>de.diedavids.cuba.ceusr.entity.Order</class>
         <class>de.diedavids.cuba.ceusr.entity.Product</class>
         <class>de.diedavids.cuba.ceusr.entity.LineItem</class>
+        <class>de.diedavids.cuba.ceusr.entity.BigCustomersList</class>
     </persistence-unit>
 </persistence>

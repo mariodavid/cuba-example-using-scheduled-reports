@@ -9,4 +9,8 @@
         <property name="customer" view="_minimal"/>
         <property name="lineItems" view="lineItem-view"/>
     </view>
+    <view entity="ceusr_BigCustomersList" name="bigCustomersList-view" extends="_local">
+        <property name="scheduledReportExecution" view="_minimal"/>
+        <property name="bigCustomerListFile" view="_minimal"/>
+    </view>
 </views>

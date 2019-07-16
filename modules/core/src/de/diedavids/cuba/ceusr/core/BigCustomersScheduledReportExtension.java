@@ -13,10 +13,10 @@ import java.time.LocalDate;
 import java.time.ZonedDateTime;
 import java.util.*;
 
-@Component(CustomerScheduledReportExtension.NAME)
-public class CustomerScheduledReportExtension implements ScheduledReportExtension {
+@Component(BigCustomersScheduledReportExtension.NAME)
+public class BigCustomersScheduledReportExtension implements ScheduledReportExtension {
 
-    public static final String NAME = "ceusr_CustomerScheduledReportExtension";
+    public static final String NAME = "ceusr_BigCustomersScheduledReportExtension";
 
     @Inject
     protected TimeSource timeSource;

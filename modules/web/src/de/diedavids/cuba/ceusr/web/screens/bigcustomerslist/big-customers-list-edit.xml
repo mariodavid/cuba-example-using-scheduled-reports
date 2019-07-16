@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editorCaption"
+        focusComponent="form"
+        messagesPack="de.diedavids.cuba.ceusr.web.screens.bigcustomerslist">
+    <data>
+        <instance id="bigCustomersListDc"
+                  class="de.diedavids.cuba.ceusr.entity.BigCustomersList"
+                  view="bigCustomersList-view">
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" editable="false" dataContainer="bigCustomersListDc">
+            <column width="250px">
+                <upload id="bigCustomerListFileField" fileStoragePutMode="IMMEDIATE" property="bigCustomerListFile"
+                        showFileName="true"/>
+                <dateField id="fromField" property="from"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button action="windowCommitAndClose"/>
+            <button action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

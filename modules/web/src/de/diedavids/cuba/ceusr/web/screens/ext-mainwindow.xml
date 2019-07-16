@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd" class="de.diedavids.cuba.ceusr.web.screens.ExtAppMainWindow"
+        messagesPack="de.diedavids.cuba.ceusr.web.screens"
+        extends="/com/haulmont/cuba/web/app/mainwindow/mainwindow.xml">
+    <dialogMode height="600" width="800"/>
+    <layout>
+        <split id="foldersSplit">
+            <workArea id="workArea">
+                <initialLayout>
+                    <button id="downloadCurrentBigCustomerReport"
+                            icon="FILE"
+                            align="MIDDLE_CENTER"
+                            width="400px"
+                            height="150px"
+                            stylename="friendly icon-align-top huge"
+                            caption="msg://downloadCurrentBigCustomerReport" />
+                </initialLayout>
+            </workArea>
+        </split>
+    </layout>
+</window>
