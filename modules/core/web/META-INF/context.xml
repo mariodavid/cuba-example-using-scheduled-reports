@@ -8,7 +8,7 @@
       maxIdle="2"
       maxWaitMillis="5000"
       driverClassName="org.postgresql.Driver"
-      url="jdbc:postgresql://localhost/ceusr-test-2"
+      url="jdbc:postgresql://localhost/ceusr-test"
       username="postgres"
       password="postgres"/>
 
