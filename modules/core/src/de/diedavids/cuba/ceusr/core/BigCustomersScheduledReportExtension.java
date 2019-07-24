@@ -27,8 +27,10 @@ public class BigCustomersScheduledReportExtension implements ScheduledReportExte
      */
     @Override
     public boolean supports(ScheduledReport scheduledReport) {
-
-        return scheduledReport.getCode().equals("big-customers");
+        return Objects.equals(
+                scheduledReport.getCode(),
+                "big-customers"
+        );
     }
 
     /**

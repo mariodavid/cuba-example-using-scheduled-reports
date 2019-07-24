@@ -15,6 +15,7 @@ import java.time.YearMonth;
 import java.time.ZonedDateTime;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
 
 @Component(MonthlySalesReportScheduledReportExtension.NAME)
@@ -31,7 +32,10 @@ public class MonthlySalesReportScheduledReportExtension implements ScheduledRepo
      */
     @Override
     public boolean supports(ScheduledReport scheduledReport) {
-        return scheduledReport.getCode().equals("sales-report-monthly");
+        return Objects.equals(
+                scheduledReport.getCode(),
+                "sales-report-monthly"
+        );
     }
 
     /**
