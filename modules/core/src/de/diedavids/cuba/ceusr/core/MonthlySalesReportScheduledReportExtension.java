@@ -41,14 +41,10 @@ public class MonthlySalesReportScheduledReportExtension implements ScheduledRepo
     /**
      * the report contains a parameter "from", "to" and "month", that has to passed in
      *
-     * the extension can configure the report with that parameter
-     *
-     * Currently the value is hard-coded in this extension class, but it can also be a result
-     * of a calculation on the current date e.g.
+     * the extension can configure the report with defining those parameters
      */
     @Override
     public Map<String, Object> provideParameters(ScheduledReport scheduledReport) {
-
 
         Map<String, Object> params = new HashMap<>();
         params.put("from", toDate(salesReportPeriod().atDay(1)));
@@ -60,6 +56,11 @@ public class MonthlySalesReportScheduledReportExtension implements ScheduledRepo
 
     private YearMonth currentYearMonth() {
         return YearMonth.from(today());
+    }
+
+    private LocalDate today() {
+        ZonedDateTime now = timeSource.now();
+        return now.toLocalDate();
     }
 
     private YearMonth salesReportPeriod() {
@@ -84,11 +85,6 @@ public class MonthlySalesReportScheduledReportExtension implements ScheduledRepo
     @Override
     public boolean shouldBeExecuted(ScheduledReport scheduledReport) {
         return today().isBefore(LocalDate.of(2021,1,1));
-    }
-
-    private LocalDate today() {
-        ZonedDateTime now = timeSource.now();
-        return now.toLocalDate();
     }
 
     /**
