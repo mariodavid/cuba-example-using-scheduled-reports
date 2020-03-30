@@ -1,0 +1,2 @@
+alter table CEUSR_ORDER add constraint FK_CEUSR_ORDER_ON_CUSTOMER foreign key (CUSTOMER_ID) references CEUSR_CUSTOMER(ID);
+create index IDX_CEUSR_ORDER_ON_CUSTOMER on CEUSR_ORDER (CUSTOMER_ID);
